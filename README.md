@@ -4,6 +4,7 @@ Example Python Airwatch API Authentication using CMSURL Authorization.
 
 This example requires the chilkat package and requests. 
 
+```python
 # Python example for CMSURL authorization to the Airwatch/Workspace One API using chilkat
 
 import chilkat
@@ -50,3 +51,4 @@ headers = {
         }
 
 response = requests.get(url, headers=headers)
+```
