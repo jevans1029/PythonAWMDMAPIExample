@@ -46,7 +46,7 @@ headers = {
 response = requests.get(url, headers=headers)
 print(response.content)
 ```
-Example 2 Python Airwatch API Authentication using CMSURL Authorization. 
+# Example 2 Python Airwatch API Authentication using CMSURL Authorization. 
 
 This example requires the chilkat package and requests. 
 
