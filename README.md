@@ -20,7 +20,7 @@ certfile.close()
 
 
 #p12 format holds both a key and a certificate
-key, certificate, additional_certs = pkcs12.load_key_and_certificates(cert, password="password".encode(), backend=None)
+key, certificate, additional_certs = pkcs12.load_key_and_certificates(cert, "password".encode())
 
 
 
