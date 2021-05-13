@@ -5,9 +5,8 @@ This example requires the cryptography package.
 
 ```python
 import base64
-from cryptography.hazmat.primitives.serialization import pkcs12
+from cryptography.hazmat.primitives.serialization import pkcs12, pkcs7
 from cryptography.hazmat.primitives import hashes, serialization
-from cryptography.hazmat.primitives.serialization import pkcs7
 import requests
 
 host = "example.awmdm.com"
@@ -28,7 +27,9 @@ options = [pkcs7.PKCS7Options.NoCapabilities,  pkcs7.PKCS7Options.DetachedSignat
 
 
 signed_data = pkcs7.PKCS7SignatureBuilder().set_data(
-    signing_data.encode("UTF-8")).add_signer(certificate, key, hashes.SHA1()).sign(serialization.Encoding.DER, options)
+    signing_data.encode("UTF-8"))
+    .add_signer(certificate, key, hashes.SHA1())
+    .sign(serialization.Encoding.DER, options)
     
 signed_data = base64.b64encode(signed_data)
 
